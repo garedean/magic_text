@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  resources :messages, only: [:index, :new, :create, :show]
+  devise_for :users
+  root "static_pages#home"
+
+  resources :users do
+    resources :messages, only: [:index, :new, :create, :show]
+  end
 end

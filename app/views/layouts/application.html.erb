@@ -8,9 +8,15 @@
 </head>
 <body>
 
+  <%= render "layouts/navbar" %>
+
   <div class="container">
     <div class="row">
-      <%= flash[:notice] %>
+      <% if flash[:notice] %>
+        <p class="flash">
+          <%= flash[:notice] %>
+        </p>
+      <% end %>
       <div class="col-sm-6 col-sm-offset-3">
         <%= yield %>
       </div>

@@ -14,6 +14,7 @@ gem 'devise', '~> 3.5.1'
 gem 'bootstrap-wysihtml5-rails'
 gem 'simple_form'
 gem 'rest-client', '~> 1.8.0'
+gem 'pry-byebug'
 
 group :development do
   gem 'byebug'
@@ -26,4 +27,10 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'dotenv-rails'
+
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end

@@ -1,2 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.flash {
+  background: #08c;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  color: white;
+  font-size: 1.2em;
+}
