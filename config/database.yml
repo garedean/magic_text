@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: text_magic_development
+
+test:
+  <<: *default
+  database: text_magic_test
+
+production:
+  <<: *default
+  database: text_magic_production
+  username: text_magic
+  password: <%= ENV['EXAMPLE_DATABASE_PASSWORD'] %>

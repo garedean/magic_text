@@ -1,0 +1,17 @@
+<h1 class="text-center page-header">New Message</h1>
+
+<% if @message.errors.any? %>
+  <p>Something went wrong!</p>
+  <ul>
+    <%= @message.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= simple_form_for @message do |f| %>
+  <%= f.input :to %>
+  <%= f.input :from %>
+  <%= f.input :body %>
+  <%= f.button :submit %>
+<% end %>
