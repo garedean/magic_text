@@ -1,0 +1,6 @@
+<%= simple_form_for [current_user, @message] do |f| %>
+  <%= f.input :to %>
+  <%= f.input :from %>
+  <%= f.input :body %>
+  <%= f.button :submit, "Send", data: {disable_with: 'Send'} %>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Create a contact</h1>
+
+
+<%= simple_form_for [current_user, @contact] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :phone %>
+  <%= f.submit 'Add Contact', class: 'btn btn-success', data: { disable_with: 'Adding...'} %>
+<% end %>

@@ -1,0 +1,16 @@
+<h1>Address Book</h1>
+
+<% if @contacts.any? %>
+
+    <ul>
+      <% @contacts.each do |contact| %>
+        <li> <%= link_to contact.name, user_contact_path(current_user, contact) %></li>
+      <% end %>
+    </ul>
+
+<% else %>
+
+
+  <h2>There are no contacts at this time. <%= link_to 'Add contact here', new_user_contact_path(current_user), class: 'btn btn-info' %></h2>
+
+<% end %>
