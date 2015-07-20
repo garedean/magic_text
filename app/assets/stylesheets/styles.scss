@@ -13,3 +13,40 @@
   color: white;
   font-size: 1.2em;
 }
+
+.checkbox_container {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding: 4px 0;
+  label {
+    margin: 0;
+  }
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+#new_message {
+  input[type="submit"] {
+    margin-top: 10px;
+  }
+}
+
+#messages-list {
+  list-style-type: none;
+  -webkit-padding-start: 0;
+  a {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding: 7px 0;
+    &:last-of-type {
+      border: none;
+    }
+    &:hover {
+      background: #f5f5f5;
+      text-decoration: none;
+    }
+  }
+}

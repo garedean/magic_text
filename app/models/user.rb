@@ -4,5 +4,13 @@ class User < ActiveRecord::Base
 
   has_many :contacts
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:phone_number]
+
+  def email_required?
+    false
+  end
+  
+  def email_changed?
+    false
+  end
 end

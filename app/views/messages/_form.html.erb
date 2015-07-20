@@ -1,6 +1,6 @@
 <%= simple_form_for [current_user, @message] do |f| %>
-  <%= f.input :to %>
-  <%= f.input :from %>
+<%= f.input :from, readonly: true, input_html: {value: current_user.phone_number} %>
   <%= f.input :body %>
-  <%= f.button :submit, "Send", data: {disable_with: 'Send'} %>
+  <%= f.collection_check_boxes :to, current_user.contacts, :phone, :name, {:item_wrapper_class => 'checkbox_container'} %>
+  <%= f.button :submit, "Send", data: {disable_with: 'Send'}, class: "btn-primary" %>
 <% end %>

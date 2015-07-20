@@ -1,0 +1,11 @@
+<h1 class="page-header"> <%= @contact.name %>'s information'</h1>
+
+<h3 style="display:inline;">Phone Number:</h3>
+<h4 style="display: inline;"> <%= @contact.phone %></h4>
+
+<%= simple_form_for [current_user, @message] do |f| %>
+  <%= f.input :from, readonly: true, input_html: {value: current_user.phone_number} %>
+  <%= f.input :body %>
+  <%= f.input :to, as: :hidden, :input_html => { :value => @contact.phone }  %>
+  <%= f.button :submit, "Send", data: {disable_with: 'Send'}, class: "btn-primary" %>
+<% end %>

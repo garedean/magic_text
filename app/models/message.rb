@@ -4,6 +4,7 @@ class Message < ActiveRecord::Base
   private
 
   def send_sms
+
     begin
       response = RestClient::Request.new(
         :method => :post,

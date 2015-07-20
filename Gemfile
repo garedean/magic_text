@@ -15,7 +15,7 @@ gem 'bootstrap-wysihtml5-rails'
 gem 'simple_form'
 gem 'rest-client', '~> 1.8.0'
 gem 'pry-byebug'
-
+gem 'builder'
 group :development do
   gem 'byebug'
   gem 'web-console'

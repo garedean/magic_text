@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
+    @message = Message.new
   end
 
   def new

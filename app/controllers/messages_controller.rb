@@ -8,14 +8,23 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
-    
-    if @message.save
-      flash[:notice] = "Your message was sent!"
-      redirect_to messages_path
+    if message_params[:to].class == String
+      Message.create(message_params)
     else
-      render "new"
+      message_params[:to].each do |number|
+        Message.new(to: number, from: message_params[:from], body: message_params[:body]).save
     end
+  end
+    # @message = Message.new(message_params)
+    #
+    # if @message.save
+    #   flash[:notice] = "Your message was sent!"
+    #   redirect_to messages_path
+    # else
+    #   render "new"
+    # end
+
+    redirect_to user_messages_path(current_user)
   end
 
   def show
@@ -25,6 +34,6 @@ class MessagesController < ApplicationController
   private
 
     def message_params
-      params.require(:message).permit(:to, :from, :body)
+      params.require(:message).permit(:to, :from, :body, :phone, :to => [])
     end
 end
